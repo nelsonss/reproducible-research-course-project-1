@@ -7,6 +7,7 @@ output:
 
 ## Loading and preprocessing the data
 
+
 ```r
 library(ggplot2)
 
@@ -248,7 +249,7 @@ activity_imputed$days=tolower(weekdays(activity_imputed$date))
 ```
 
 ```r
-activity_imputed$day_type<-ifelse(activity_imputed$days=="saturday"|activity_imputed$days=="sunday","weekend","weekday")
+activity_imputed$day_type<-ifelse(activity_imputed$days=="sábado"|activity_imputed$days=="domingo","weekend","weekday")
 avg_steps<-aggregate(activity_imputed$steps,by=list(activity_imputed$interval,activity_imputed$day_type),FUN=mean,na.rm=TRUE)
 colnames(avg_steps)<-c("interval","day_type","steps")
 ```
